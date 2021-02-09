@@ -7,3 +7,5 @@ A small Starset fan-site created using ASP.NET MVC
 
 
 https://www.youtube.com/embed/6IdVAmbs8Vs
+
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/6IdVAmbs8Vs/0.jpg)](https://www.youtube.com/watch?v=6IdVAmbs8Vs)
