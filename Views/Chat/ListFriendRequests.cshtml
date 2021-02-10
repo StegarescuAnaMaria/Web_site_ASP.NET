@@ -1,0 +1,83 @@
+﻿
+@{
+    ViewBag.Title = "ListFriendRequests";
+}
+
+<br />
+
+<table class="table table-hover table-bordered" id="frequests">
+    <thead>
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Approve?
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+
+
+
+</table>
+<br />
+<a href="/Chat/ListFriends" role="button" style="float:left; margin-top:5px; margin-bottom:10px;" class="btn btn-primary">List Friends</a>
+<a href="/Chat/ListUsers" role="button" style="float:right; margin-top:5px; margin-bottom:10px;" class="item btn btn-primary">List Users</a>
+
+@section scripts{
+
+    <script>
+        $(document).ready(function () {
+
+            var table = $("#frequests").DataTable({
+                ajax: {
+
+                    url: "/api/friendrequests",
+                    dataSrc: ""
+                },
+                columns: [
+                    {
+                        data: "name",
+                        render: function (data, type, row) {
+                            return row.InitiatorName;
+                        }
+                    },
+                    {
+                        data: "approve or delete friend invitation",
+                        render: function (data, type, row) {
+                            return "<button class='btn btn-primary js-approve' target-id=" + row.TargetId + " initiator-id=" + row.InitiatorId + " aria-disabled='false'>Approve</button>" + 
+                                "<button class='btn btn-primary js-delete' style='margin-left:5px' target-id=" + row.TargetId + " initiator-id=" + row.InitiatorId + " aria-disabled='false'>Delete</button>";
+                        }
+                    }
+                ]
+            });
+
+            $("#frequests").on("click", ".js-delete", function () {
+                var button = $(this);
+                $.ajax({
+                    url: "/api/friendrequests?initiatorId=" + button.attr("initiator-id") + "&targetId=" + button.attr("target-id"),
+                    method: "DELETE",
+                    success: function () {
+                        table.row(button.parents("tr")).remove().draw();
+                    }
+                });
+            });
+
+            $("#frequests").on("click", ".js-approve", function () {
+                var button = $(this);
+                $.ajax({
+                    url: "/api/friend?initiatorId=" + button.attr("initiator-id") + "&targetId=" + button.attr("target-id"),
+                    method: "POST",
+                    success: function () {
+                        table.row(button.parents("tr")).remove().draw();
+                    }
+                });
+            });
+
+        });
+
+    </script>
+
+}

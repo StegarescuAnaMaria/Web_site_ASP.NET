@@ -1,0 +1,392 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+
+<div class="container div1">
+    <div class="row">
+        <div class="column">
+            @for (int i = 0; i < Model.Count; i += 2)
+            {
+                <div class="hov" style="position:relative; background-image: url(@Model[i].ImgLink); background-position: center; background-size: cover; margin-top: 2%;">
+
+                    <img src="@Model[i].ImgLink" class="img-fluid clickable" data-id="@Model[i].VideoId"/>
+                    <img src="~/Videos/play_button.png" class="play-btn" data-toggle="modal" data-target="#@Model[i].Id" />
+                </div>
+                <div class="modal fade" id="@Model[i].Id">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <iframe width="560" height="315" src=@("https://www.youtube.com/embed/" + Model[i].VideoId) frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <ul class="menu" id="@Model[i].VideoId">
+                    <li class="menu-item">
+                        @using (Html.BeginForm(actionName: "Delete", controllerName: "Video", method: FormMethod.Post, routeValues: new { id = Model[i].Id }))
+                        {
+                            @Html.HttpMethodOverride(HttpVerbs.Delete)
+                            <button type="submit" class="btn btn-link">
+                                Delete
+                            </button>
+                        }
+                    </li>
+
+                    <li class="menu-item">
+                        @using (Html.BeginForm(actionName: "Edit", controllerName: "Video", method: FormMethod.Post, routeValues: new { id = Model[i].Id }))
+                        {
+                            <button type="submit" class="btn btn-link">
+                                Update
+                            </button>
+                        }
+                    </li>
+                </ul>
+            }
+        </div>
+        <div class="column">
+            @for (int i = 1; i < Model.Count; i += 2)
+            {
+                <div class="hov" style="position: relative; background-image: url( @Model[i].ImgLink ); background-position: center; background-size: cover; margin-top: 2%;">
+
+                    <img src="@Model[i].ImgLink" class="img-fluid clickable" data-id="@Model[i].VideoId"/>
+
+                    <img src="~/Videos/play_button.png" class="play-btn" data-toggle="modal" data-target="#@Model[i].Id" />
+                </div>
+                <div class="modal fade" id="@Model[i].Id">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <iframe width="560" height="315" src=@("https://www.youtube.com/embed/" + Model[i].VideoId) frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <ul class="menu" id="@Model[i].VideoId">
+                    <li class="menu-item">
+                        @using (Html.BeginForm(actionName: "Delete", controllerName: "Video", method: FormMethod.Post, routeValues: new { id = Model[i].Id }))
+                        {
+                            @Html.HttpMethodOverride(HttpVerbs.Delete)
+                            <button type="submit" class="btn btn-link">
+                                Delete
+                            </button>
+                        }
+                    </li>
+
+                    <li class="menu-item">
+                        @using (Html.BeginForm(actionName: "Edit", controllerName: "Video", method: FormMethod.Post, routeValues: new { id = Model[i].Id }))
+                        {
+                            <button type="submit" class="btn btn-link">
+                                Update
+                            </button>
+                        }
+                    </li>
+                </ul>
+            }
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+<div class="container div2">
+    <div class="row">
+        <div class="column">
+            @for (int i = 0; i < Model.Count; i += 3)
+            {
+                <div class="hov" style="position:relative; background-image: url(@Model[i].ImgLink); background-position: center; background-size: cover; margin-top: 2%;">
+
+                    <img src="@Model[i].ImgLink" class="img-fluid clickable" data-id="@Model[i].VideoId"/>
+                    <img src="~/Videos/play_button.png" class="play-btn" data-toggle="modal" data-target="#@Model[i].Id" />
+                </div>
+                <div class="modal fade" id="@Model[i].Id">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <iframe width="560" height="315" src=@("https://www.youtube.com/embed/" + Model[i].VideoId) frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <ul class="menu" id="@Model[i].VideoId">
+                    <li class="menu-item">
+                        @using (Html.BeginForm(actionName: "Delete", controllerName: "Video", method: FormMethod.Post, routeValues: new { id = Model[i].Id }))
+                        {
+                            @Html.HttpMethodOverride(HttpVerbs.Delete)
+                            <button type="submit" class="btn btn-link">
+                                Delete
+                            </button>
+                        }
+                    </li>
+
+                    <li class="menu-item">
+                        @using (Html.BeginForm(actionName: "Edit", controllerName: "Video", method: FormMethod.Post, routeValues: new { id = Model[i].Id }))
+                        {
+                            <button type="submit" class="btn btn-link">
+                                Update
+                            </button>
+                        }
+                    </li>
+                </ul>
+
+            }
+        </div>
+        <div class="column">
+            @for (int i = 1; i < Model.Count; i += 3)
+            {
+                <div class="hov" style="position: relative; background-image: url( @Model[i].ImgLink ); background-position: center; background-size: cover; margin-top: 2%;">
+
+                    <img src="@Model[i].ImgLink" class="img-fluid clickable" data-id="@Model[i].VideoId"/>
+
+                    <img src="~/Videos/play_button.png" class="play-btn" data-toggle="modal" data-target="#@Model[i].Id" />
+                </div>
+                <div class="modal fade" id="@Model[i].Id">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <iframe width="560" height="315" src=@("https://www.youtube.com/embed/" + Model[i].VideoId) frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <ul class="menu" id="@Model[i].VideoId">
+                    <li class="menu-item">
+                        @using (Html.BeginForm(actionName: "Delete", controllerName: "Video", method: FormMethod.Post, routeValues: new { id = Model[i].Id }))
+                        {
+                            @Html.HttpMethodOverride(HttpVerbs.Delete)
+                            <button type="submit" class="btn btn-link">
+                                Delete
+                            </button>
+                        }
+                    </li>
+                    <li class="menu-item">
+                        @using (Html.BeginForm(actionName: "Edit", controllerName: "Video", method: FormMethod.Post, routeValues: new { id = Model[i].Id }))
+                        {
+                            <button type="submit" class="btn btn-link">
+                                Update
+                            </button>
+                        }
+                    </li>
+                </ul>
+            }
+        </div>
+        <div class="column">
+            @for (int i = 2; i < Model.Count; i += 3)
+            {
+                <div class="hov" style="position: relative; background-image: url( @Model[i].ImgLink ); background-position: center; background-size: cover; margin-top: 2%;">
+
+                    <img src="@Model[i].ImgLink" class="img-fluid clickable" data-id="@Model[i].VideoId"/>
+
+                    <img src="~/Videos/play_button.png" class="play-btn" data-toggle="modal" data-target="#@Model[i].Id" />
+                </div>
+                <div class="modal fade" id="@Model[i].Id">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <iframe width="560" height="315" src=@("https://www.youtube.com/embed/" + Model[i].VideoId) frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <ul class="menu" id="@Model[i].VideoId">
+                    <li class="menu-item">
+                        @using (Html.BeginForm(actionName: "Delete", controllerName: "Video", method: FormMethod.Post, routeValues: new { id = Model[i].Id }))
+                        {
+                            @Html.HttpMethodOverride(HttpVerbs.Delete)
+                            <button type="submit" class="btn btn-link">
+                                Delete
+                            </button>
+                        }
+                    </li>
+                    <li class="menu-item">
+                        @using (Html.BeginForm(actionName: "Edit", controllerName: "Video", method: FormMethod.Post, routeValues: new { id = Model[i].Id }))
+                        {
+                            <button type="submit" class="btn btn-link">
+                                Update
+                            </button>
+                        }
+                    </li>
+                </ul>
+            }
+
+        </div>
+    </div>
+
+</div>
+<div class="out-click"></div>
+<a href="/Video/Add" role="button" style="float:right; margin-top:5px; margin-bottom:5px;" class="btn btn-primary">Add Video</a>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    .play-btn {
+        width: 3.5em;
+        cursor: pointer;
+        transition: 0.5s;
+        opacity: 0;
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        display: block;
+        margin: auto;
+    }
+
+    .img-fluid {
+        width: 30em;
+        height: auto;
+    }
+
+    .hov:hover .play-btn {
+        opacity: 1;
+    }
+
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+        .row .column {
+            flex: 33.3%;
+            width: auto;
+            overflow: hidden;
+            padding: 0 4px;
+            height: 100%;
+        }
+
+            .row .column .img-fluid {
+                margin-top: 2%;
+                width: 100%;
+                height: 100%;
+            }
+
+    .menu {
+        display: block;
+        background-color: white;
+        padding: 10px 0px;
+        border-radius: 5px;
+        box-shadow: 2px 2px 30px lightgrey;
+        position: absolute;
+        transform-origin: center;
+        z-index: 2;
+        opacity: 0;
+        transform: scale(0);
+        transition: transform 0.2s, opacity 0.2s;
+    }
+
+        .menu.show {
+            opacity: 1;
+            transform: scale(1);
+            transform-origin: top left;
+        }
+
+    .menu-item {
+        display: block;
+        padding: 10px 30px;
+        transition: 0.1s;
+        color: #666;
+    }
+
+        .menu-item:hover {
+            background-color: #eee;
+            cursor: pointer;
+        }
+
+    .out-click {
+        height: 100vh;
+        width: 100vw;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        display: none;
+    }
+
+    @@media only screen and (max-width: 800px) {
+        .row .column {
+            flex: 50%;
+        }
+
+        .play-btn {
+            width: 3em;
+        }
+
+        .img-fluid {
+        }
+    }
+
+    @@media only screen and (max-width: 600px) {
+        .row .column {
+            flex: 100%;
+        }
+
+        iframe {
+            width: 100%;
+            height: auto;
+        }
+    }
+</style>
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            var width = $(window).width();
+            if (width <= 800 && width > 600) {
+                $(".div2").remove();
+            }
+            else {
+                $(".div1").remove();
+            }
+
+        });
+
+        const clickable = document.getElementsByClassName("clickable");
+
+
+        //const menu = $(".menu");
+        const menu_aux = document.getElementsByClassName("menu");
+        //const outClick = $(".out-click");
+        const outClick = document.getElementsByClassName("out-click");
+
+        for (var i = 0; i < clickable.length; i++) {
+            clickable[i].addEventListener('contextmenu', e => {
+                e.preventDefault();
+                var target = e.target;
+                var id = $(target).attr('data-id');
+                console.log(id);
+                var menu = document.getElementById(id);
+                    //menu.style.top = `${e.clientY}px`;
+                    //menu.style.left = `${e.clientX}px`;
+                menu.style.top = `${e.pageY}px`;
+                menu.style.left = `${e.pageX}px`;
+                menu.classList.add('show');
+                
+                for (var j = 0; j < outClick.length; j++) {
+                    outClick[j].style.display = "block";
+                }
+            });
+        }
+        for (var i = 0; i < outClick.length; i++) {
+            outClick[i].addEventListener('click', () => {
+                for (var j = 0; j < menu_aux.length; j++) {
+                    menu_aux[j].classList.remove('show');
+                }
+                for (var j = 0; j < outClick.length; j++) {
+                    outClick[j].style.display = "none";
+                }
+            });
+        }
+
+
+    </script>
+}

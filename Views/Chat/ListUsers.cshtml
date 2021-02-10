@@ -1,0 +1,119 @@
+﻿@*@model IEnumerable<Starset.Models.RolesViewModel>*@
+@{
+    ViewBag.Title = "ListUsers";
+}
+
+<br />
+
+<table class="table table-hover table-bordered" id="users">
+    <thead>
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Role
+            </th>
+            <th>
+                Send Friend Invitation
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+
+
+
+</table>
+
+<a href="/Chat/ListFriendRequests" role="button" style="float:left; margin-top:5px; margin-bottom:10px;" class="btn btn-primary">List Friend Requests</a>
+<a href="/Chat/ListFriends" role="button" style="float:right; margin-top:5px; margin-bottom:10px;" class="btn btn-primary">List Friends</a>
+
+@section scripts{
+
+    <script>
+        $(document).ready(function () {
+
+            var table = $("#users").DataTable({
+                ajax: {
+
+                    url: "/api/users",
+                    dataSrc: ""
+                },
+                columns: [
+                    {
+                        data: "name",
+                        render: function (data, type, row) {
+                            return row.Name;
+                        }
+                    },
+                    {
+                        data: "role",
+                        render: function (data, type, row) {
+                            return (row.RoleName == null) ? "User" : row.RoleName;
+                        }
+                    },
+                    {
+                        data: "send friend invitation",
+                        render: function (data, type, row) {
+                            if (row.IsFriend)
+                                return "Is friend";
+                            //"<button class='btn btn-primary disabled' aria-disabled='true'>Send</button>";
+                            if (row.RequestSent)
+                                return "<button class='btn btn-primary disabled' aria-disabled='true'>Sent</button>";
+                            if (row.RequestReceived) 
+                                 return "<button class='btn btn-primary js-approve' target-id=" + row.UserTargetId + " initiator-id=" + row.UserInitiatorId + ">Approve</button>" +
+                                    "<button class='btn btn-primary js-delete' style='margin-left:5px' target-id=" + row.UserTargetId + " initiator-id=" + row.UserInitiatorId + ">Delete</button>";
+                            if(!row.RequestSent || !row.RequestReceived || !row.IsFriend)
+                                return "<button class='btn btn-primary js-send' target-id=" + row.UserTargetId + " initiator-id=" + row.UserInitiatorId + ">Send</button>";
+                        }
+                    },
+                ]
+            });
+
+            $("#users").on("click", ".js-delete", function () {
+                var button = $(this);
+                $.ajax({
+                    url: "/api/friendrequests?initiatorId=" + button.attr("target-id") + "&targetId=" + button.attr("initiator-id"),
+                    method: "DELETE",
+                    success: function () {
+                        table.row.RequestSent = true;
+                        table.row.RequestReceived = false;
+                        //console.log("Success");
+                        button.text("Send");
+                        button.attr("style", "margin-left:0px");
+                        button.attr("class", "js-send btn btn-primary");
+                        $(".js-approve").hide();
+                            //.attr("style", "display:none");
+                    }
+                });
+            });
+
+
+            $("#users").on("click", ".js-send", function () {
+                var button = $(this);
+                $.ajax({
+                    url: "/api/friendrequests?userInitiatorId=" + button.attr("initiator-id") + "&userTargetId=" + button.attr("target-id"),
+                    method: "POST",
+                    success: function () {
+                        button.attr("disabled", true);
+                        button.text("Sent");
+                    }
+                });
+            });
+            $("#users").on("click", ".js-approve", function () {
+                var button = $(this);
+                $.ajax({
+                    url: "/api/friend?initiatorId=" + button.attr("target-id") + "&targetId=" + button.attr("initiator-id"),
+                    method: "POST",
+                    success: function () {
+                        button.parents("td").text("Is friend");
+                    }
+                });
+            });
+        });
+
+    </script>
+
+}
+

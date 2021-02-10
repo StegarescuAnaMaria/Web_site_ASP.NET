@@ -1,0 +1,19 @@
+﻿@model Starset.Models.Video
+@{
+    ViewBag.Title = "Add";
+}
+
+<h2>Add Video</h2>
+
+@using (Html.BeginForm("Save", "Video", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+<div class="form-group">
+    @Html.LabelFor(m => m.Url, new { @class = "control-label col-md-2" })
+    @Html.TextBoxFor(m => m.Url, new { @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.Url)
+</div>
+
+    @Html.HiddenFor(m => m.Id)
+    @Html.AntiForgeryToken()
+    <button type="submit" class="btn btn-primary">Save</button>
+}

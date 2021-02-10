@@ -1,0 +1,212 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+
+<div class="container div1">
+    <div class="row">
+        <div class="column">
+            @for (int i = 0; i < Model.Count; i += 2)
+            {
+                <div class="hov" style="position:relative; background-image: url(@Model[i].ImgLink); background-position: center; background-size: cover; margin-top: 2%;">
+
+                    <img src="@Model[i].ImgLink" class="img-fluid"/>
+                    <img src="~/Videos/play_button.png" class="play-btn" data-toggle="modal" data-target="#@Model[i].Id" />
+                </div>
+                <div class="modal fade" id="@Model[i].Id">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <iframe width="560" height="315" src=@("https://www.youtube.com/embed/" + Model[i].VideoId) frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+        <div class="column">
+            @for (int i = 1; i < Model.Count; i += 2)
+            {
+                <div class="hov" style="position: relative; background-image: url( @Model[i].ImgLink ); background-position: center; background-size: cover; margin-top: 2%;">
+
+                    <img src="@Model[i].ImgLink" class="img-fluid"/>
+
+                    <img src="~/Videos/play_button.png" class="play-btn" data-toggle="modal" data-target="#@Model[i].Id" />
+                </div>
+                <div class="modal fade" id="@Model[i].Id">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <iframe width="560" height="315" src=@("https://www.youtube.com/embed/" + Model[i].VideoId) frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+<div class="container div2">
+    <div class="row">
+        <div class="column">
+            @for (int i = 0; i < Model.Count; i += 3)
+            {
+                <div class="hov" style="position:relative; background-image: url(@Model[i].ImgLink); background-position: center; background-size: cover; margin-top: 2%;">
+
+                    <img src="@Model[i].ImgLink" class="img-fluid" />
+                    <img src="~/Videos/play_button.png" class="play-btn" data-toggle="modal" data-target="#@Model[i].Id" />
+                </div>
+                <div class="modal fade" id="@Model[i].Id">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <iframe width="560" height="315" src=@("https://www.youtube.com/embed/" + Model[i].VideoId) frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+        <div class="column">
+            @for (int i = 1; i < Model.Count; i += 3)
+            {
+                <div class="hov" style="position: relative; background-image: url( @Model[i].ImgLink ); background-position: center; background-size: cover; margin-top: 2%;">
+
+                    <img src="@Model[i].ImgLink" class="img-fluid"/>
+
+                    <img src="~/Videos/play_button.png" class="play-btn" data-toggle="modal" data-target="#@Model[i].Id" />
+                </div>
+                <div class="modal fade" id="@Model[i].Id">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <iframe width="560" height="315" src=@("https://www.youtube.com/embed/" + Model[i].VideoId) frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+        <div class="column">
+            @for (int i = 2; i < Model.Count; i += 3)
+            {
+                <div class="hov" style="position: relative; background-image: url( @Model[i].ImgLink ); background-position: center; background-size: cover; margin-top: 2%;">
+
+                    <img src="@Model[i].ImgLink" class="img-fluid"  />
+
+                    <img src="~/Videos/play_button.png" class="play-btn" data-toggle="modal" data-target="#@Model[i].Id" />
+                </div>
+                <div class="modal fade" id="@Model[i].Id">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <iframe width="560" height="315" src=@("https://www.youtube.com/embed/" + Model[i].VideoId) frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+
+</div>
+<div class="out-click"></div>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    .play-btn {
+        width: 3.5em;
+        cursor: pointer;
+        transition: 0.5s;
+        opacity: 0;
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        display: block;
+        margin: auto;
+    }
+
+    .img-fluid {
+        width: 30em;
+        height: auto;
+    }
+
+    .hov:hover .play-btn {
+        opacity: 1;
+    }
+
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+        .row .column {
+            flex: 33.3%;
+            width: auto;
+            overflow: hidden;
+            padding: 0 4px;
+            height: 100%;
+        }
+
+            .row .column .img-fluid {
+                margin-top: 2%;
+                width: 100%;
+                height: 100%;
+            }
+
+    @@media only screen and (max-width: 800px) {
+        .row .column {
+            flex: 50%;
+        }
+
+        .play-btn {
+            width: 3em;
+        }
+
+        .img-fluid {
+        }
+    }
+
+    @@media only screen and (max-width: 600px) {
+        .row .column {
+            flex: 100%;
+        }
+
+        iframe {
+            width: 100%;
+            height: auto;
+        }
+    }
+</style>
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            var width = $(window).width();
+            if (width <= 800 && width > 600) {
+                $(".div2").remove();
+            }
+            else {
+                $(".div1").remove();
+            }
+
+        });
+
+    </script>
+}

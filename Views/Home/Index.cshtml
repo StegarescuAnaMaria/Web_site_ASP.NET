@@ -1,0 +1,369 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div id="theCarousel" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#theCarousel" data-slide-to="0" class="active"></li>
+        @for (int i = 1; i <= 5; i++)
+        {
+            <li data-target="#theCarousel" data-slide-to="@i"></li>
+        }
+    </ol>
+    <div class="carousel-inner">
+        <div class="item active">
+            <div class="slide0"></div>
+        </div>
+        <div class="item">
+            <div class="slide1"></div>
+        </div>
+        <div class="item">
+            <div class="slide2"></div>
+        </div>
+        <div class="item">
+            <div class="slide3"></div>
+        </div>
+        <div class="item">
+            <div class="slide4"></div>
+        </div>
+        <div class="item">
+            <div class="slide5"></div>
+        </div>
+    </div>
+
+
+    <a class="left carousel-control" href="#theCarousel" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a class="right carousel-control" href="#theCarousel" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
+
+</div>
+
+<style>
+.slide0{
+    background-image: url(@Url.Content("~/Slide/0.png"));
+    height: 40rem;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+}
+    .slide1 {
+        background-image: url( @Url.Content("~/Slide/1.jpg") );
+        height: 40rem;
+        background-repeat: no-repeat;
+        background-position: center top;
+        background-size: cover;
+    }
+    .slide2 {
+        background-image: url( @Url.Content("~/Slide/2.jpg") );
+        height: 40rem;
+        background-repeat: no-repeat;
+        background-position: center top;
+        background-size: cover;
+    }
+    .slide3 {
+        background-image: url( @Url.Content("~/Slide/3.jpg") );
+        height: 40rem;
+        background-repeat: no-repeat;
+        background-position: center top;
+        background-size: cover;
+    }
+    .slide4 {
+        background-image: url( @Url.Content("~/Slide/4.jpg") );
+        height: 40rem;
+        background-repeat: no-repeat;
+        background-position: center top;
+        background-size: cover;
+    }
+    .slide5 {
+        background-image: url( @Url.Content("~/Slide/5.jpg") );
+        height: 40rem;
+        background-repeat: no-repeat;
+        background-position: center top;
+        background-size: cover;
+    }
+</style>
+
+<!-- Section: Blog v.1 -->
+<section class="my-5">
+
+    <!-- Section heading -->
+    <h1 class="h1-responsive font-weight-bold text-center my-5">Starset</h1>
+    <!-- Section description -->
+    <p class="text-left w-responsive mx-auto mb-5">
+        Starset is an American rock band from Columbus, Ohio, formed by Dustin Bates in 2010. They released their debut album,
+        Transmissions, in 2014 and their second album, Vessels, on January 20, 2017. The band has found success in expanding
+        the ideas of their concept albums through social media and YouTube, with the band generating over $230,000 in revenue from views from the
+        latter as of November 2016. Their single "My Demons" had accumulated over 280 million YouTube views in the same time period. Their most
+        commercially successful song, "Monster", peaked at number 2 on the Billboard US Mainstream Rock chart in May 2017. A third studio album,
+        Divisions, was released on September 13, 2019.
+    </p>
+
+
+
+
+    <!-- Grid row -->
+    <div class="row">
+        <h2 class="font-weight-bold mb-3 text-center">History</h2>
+        <!-- Grid column -->
+        <div class="col-lg-5" style="float: left; ">
+
+            <!-- Featured image -->
+            <div class="view overlay rounded z-depth-2 mb-lg-0 mb-4">
+                <img class="img-fluid" src="~/ImagesGallery/Starset_Band_Photo.jpg" alt="Sample image" style="height:30rem;">
+                <a>
+                    <div class="mask rgba-white-slight"></div>
+                </a>
+            </div>
+
+        </div>
+        <!-- Grid column -->
+        <!-- Grid column -->
+        <div class="col-lg-7">
+
+            <!-- Post title -->
+            <h3 class="font-weight-bold mb-3"><strong>Formation and "Transmissions" (2013–2015)</strong></h3>
+            <!-- Excerpt -->
+            <p>
+                Starset was formed in 2013 by Downplay vocalist Dustin Bates, who is also the band's lead singer, songwriter, and keyboardist.
+                Bates' interest in astronomy was first fueled when acquiring his masters in electrical engineering as he studied at Ohio University.
+                He completed research for the US Air Force and also taught at the International Space University. Bates created the fictional
+                backstory for the band that forms the thematic basis for their music and multimedia. In the backstory, Starset was formed as part
+                of a public outreach initiative by The Starset Society. The Society's aims were to alert the public about the contents of "the Message"
+                the society obtained from a mysterious signal from space. Starset treats their backstory and The Starset Society as real in interviews,
+                with few exceptions.
+
+                The band released their debut album Transmissions on July 8, 2014. The release debuted at number 49 on the US Billboard 200 charts,
+                making it one of the highest debut albums for a rock band in 2014, and as of 2016, had sold over 79,000 copies. Three singles were
+                released in promotion of the album; "My Demons," "Carnivore," and "Halo." They also performed well in the charts, reaching fifth, sixteenth,
+                and sixteenth respectively on the Billboard US Mainstream Rock charts. The band later released an accompanying novel, The Prox Transmissions,
+                further detailing Bates' fictional back-history of the Starset Society story.
+            </p>
+            <!-- Post data -->
+            <!-- Read more button -->
+
+        </div>
+        <!-- Grid column -->
+
+
+    </div>
+    <!-- Grid row -->
+
+    <hr class="my-5">
+
+
+    <!-- Grid row -->
+    <div class="row">
+
+
+        <!-- Grid column -->
+        <div class="col-lg-9">
+
+            <!-- Category -->
+            <h3 class="font-weight-bold mb-3"><strong>"Vessels" (2016–2018)</strong></h3>
+            <!-- Excerpt -->
+            <p>
+                Rob Graves, who produced Transmissions, announced on January 26, 2016 that the making of Starset's second record has "officially
+                commenced." Along with the announcement of European tour dates supporting Breaking Benjamin, Starset announced their second
+                album, which Bates said would be more stylistically diverse than the previous, ranging in genre from metal to pop. On October 4,
+                2016, Starset posted to their social media an image from a graphic novel produced by Marvel Comics as a tie-in to The Prox Transmissions.
+                The 88-page graphic novel was co-written by Dustin Bates and Peter David, illustrated by Mirko Colak, and released in September 2017.
+
+                The album's first single, "Monster" was released on October 28, 2016. On November 4, 2016, Starset announced their upcoming album Vessels,
+                which was released on January 20, 2017. The album debuted at number 11 on the Billboard 200 albums chart. The band spent much of 2017
+                touring in support of the album. The band toured with Black Satellite in the first half of 2017. In July 2017, the band performed at Seether's
+                Shaun Morgan's "Rise Above Fest," alongside Shinedown and Halestorm. A second single from the album, "Satellite," was released in August 2017,
+                peaking at number 12 on the Billboard Mainstream Rock Chart.
+
+                The band would continue touring through the first half of 2018, though Bates said he would likely take a break before pursuing a third album with
+                the band. Instead, he was planning on releasing music under a different project name - MNQN - which would be far more electronic-based. Bates
+                stated that he also had been working on some progressive rock styled music that he intends to release as well, though he did not disclose when, or if,
+                it would be released under the Starset name. In April 2018, the band announced they had signed to Fearless Records, and released a music video for
+                the Vessels track "Ricochet". An alternate acoustic recording of the song was also released shortly after.
+
+                In August 2018, the band released a second version of the Vessels track "Bringing it Down," along with announcing a deluxe edition of the album,
+                titled Vessels 2.0. Nine new tracks appeared on Vessels 2.0, consisting of "reimagined," acoustic, and remixed versions of songs from the original
+                Vessels along with a cover of "Love You to Death" by Type O Negative. The album was released on September 28, 2018. The press release for Vessels 2.0
+                also stated that the band had plans to release their third studio album in 2019. MNQN's self-titled debut album released on April 4, 2019, and a
+                live date at of the Wonderbus Music and Arts Festival in Columbus, Ohio on August 18, 2019, was announced. Much like Starset, the MNQN project
+                features a fictional backstory, based on the titular artificial intelligence created by the Sentience Corp.
+            </p>
+            <!-- Post data -->
+            <!-- Read more button -->
+
+        </div>
+        <!-- Grid column -->
+        <!-- Grid column -->
+        <div class="col-lg-3" style="float: right; ">
+
+            <!-- Featured image -->
+            <div class="view overlay rounded z-depth-2 mb-lg-0 mb-4">
+                <img class="img-fluid" src="~/ImagesGallery/A1mKTUbC1PL._SL1500_.jpg" alt="Sample image" style="height:40rem;">
+                <a>
+                    <div class="mask rgba-white-slight"></div>
+                </a>
+            </div>
+
+        </div>
+        <!-- Grid column -->
+    </div>
+    <!-- Grid row -->
+
+    <hr class="my-5">
+
+    <!-- Grid row -->
+    <div class="row">
+
+        <!-- Grid column -->
+        <div class="col-lg-3" style="float: left; ">
+
+            <!-- Featured image -->
+            <div class="view overlay rounded z-depth-2 mb-lg-0 mb-4">
+                <img class="img-fluid" src="~/ImagesGallery/44202986.jpeg" alt="Sample image" style="height:20rem;">
+                <a>
+                    <div class="mask rgba-white-slight"></div>
+                </a>
+            </div>
+
+        </div>
+        <!-- Grid column -->
+        <!-- Grid column -->
+        <div class="col-lg-9">
+
+
+
+            <!-- Post title -->
+            <h3 class="font-weight-bold mb-3"><strong>"Divisions" (2019–present)</strong></h3>
+            <!-- Excerpt -->
+            <p>
+                On May 13, 2019, Starset announced the third album would be released on September 13, 2019, along with fall tour dates for
+                the United States. Spring 2020 tour dates for Europe and the UK were announced on July 2, 2019. The album's name Divisions,
+                was announced in August 2019, alongside the release of its first single, "Manifest". The album was released on September 13, 2019.
+                By 2020, the band had received two billion streams worldwide.
+            </p>
+            <!-- Post data -->
+            <!-- Read more button -->
+
+        </div>
+        <!-- Grid column -->
+
+
+    </div>
+    <!-- Grid row -->
+    <hr class="my-5">
+
+    <!-- Grid row -->
+    <div class="row">
+
+
+        <!-- Grid column -->
+        <div class="col-lg-9">
+            <h2 class="font-weight-bold mb-3 text-center">Musical style and influences</h2>
+            <!-- Category -->
+            <!-- Excerpt -->
+            <p>
+                Due to the large number of styles, instruments, and influences of the band's work, many outlets, including AllMusic, Billboard,
+                and Revolver all commonly label the band as "rock" or a "rock band". Bates informally describes the music as "cinematic rock".
+                He elaborated further as to what he means by the self-prescribed label, saying it's "as if a hard rock band did the soundtrack to an epic
+                blockbuster movie...we're blending symphonics with electronics with riff-driven, baritone guitar hard rock." Bates explained the evolution
+                of sound with the band's second album, Vessels: "Whereas [Transmissions] was centered in the hard rock lane before, now it goes more metal at
+                times, and the guitar work borrows from djent stylings, and it gets more ambient at times, using electronics at a more deeply integrated level.
+                Whereas the strings were more cinematic, there was more of a quartet before, on this record it’s more of an orchestration..." Bates also
+                stated he implemented some elements of EDM into the second album. Dave Richards Erie Times-News' described the band's sound as "blending
+                the progressive aspirations of Muse with the openhearted approach of emotional and muscular power of bands like Breaking Benjamin". Bates
+                also includes a notable amount of harsh vocals as well as both raw and pitch corrected clean vocals for many different effects.
+
+                Influences of Starset include Hans Zimmer, Nine Inch Nails, Sigur Ros, Thirty Seconds to Mars, Deftones, Linkin Park and Breaking Benjamin.
+            </p>
+            <!-- Post data -->
+            <!-- Read more button -->
+
+        </div>
+        <!-- Grid column -->
+        <!-- Grid column -->
+        <div class="col-lg-3" style="float: right; ">
+
+            <!-- Featured image -->
+            <div class="view overlay rounded z-depth-2 mb-lg-0 mb-4">
+                <img class="img-fluid" src="~/ImagesGallery/61rLdZ0VtbL._SS500_.jpg" alt="Sample image" style="height:35rem;">
+                <a>
+                    <div class="mask rgba-white-slight"></div>
+                </a>
+            </div>
+
+        </div>
+        <!-- Grid column -->
+    </div>
+    <!-- Grid row -->
+    <hr class="my-5">
+
+    <!-- Grid row -->
+    <div class="row">
+
+        <!-- Grid column -->
+        <div class="col-lg-5" style="float: left; ">
+
+            <!-- Featured image -->
+            <div class="view overlay rounded z-depth-2 mb-lg-0 mb-4">
+                <img class="img-fluid" src="~/ImagesGallery/starset_fb_01-1500x1000.jpg" alt="Sample image" style="height:30rem;">
+                <a>
+                    <div class="mask rgba-white-slight"></div>
+                </a>
+            </div>
+
+        </div>
+        <!-- Grid column -->
+        <!-- Grid column -->
+        <div class="col-lg-7">
+
+
+            <h2 class="font-weight-bold mb-3 text-center">Members</h2>
+            <!-- Post title -->
+            <!-- Excerpt -->
+            <ul>
+                <li>
+                    Dustin Bates – lead vocals, keyboards, soundboard
+                </li>
+                <li>
+                    Ron DeChant – bass, keyboards, backing vocals
+                </li>
+                <li>
+                    Brock Richards – guitars, backing vocals
+                </li>
+                <li>
+                    Adam Gilbert – drums, percussion
+                </li>
+            </ul>
+            <h3 class="font-weight-bold mb-3"><strong>Touring members</strong></h3>
+            <ul>
+                <li>
+                    Siobhán Richards – violin, keyboards (2017–present)
+                </li>
+                <li>
+                    Zuzana Engererova – cello (2019–present)
+                </li>
+                <li>
+                    Mariko Muranaka Friend – violin, cello (2014–2015; 2018–2019)
+                </li>
+                <li>
+                    Nneka Lyn – cello (2016)
+                </li>
+                <li>
+                    Jonathan Kampfe – cello (2017–2018)
+                </li>
+            </ul>
+            <!-- Post data -->
+            <!-- Read more button -->
+
+        </div>
+        <!-- Grid column -->
+
+
+    </div>
+    <!-- Grid row -->
+    <a href="https://en.wikipedia.org/wiki/Starset" ><div style="text-align: right;">Source: Wikipedia</div></a>
+
+</section>
+<!-- Section: Blog v.1 -->
