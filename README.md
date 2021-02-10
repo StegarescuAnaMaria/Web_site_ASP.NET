@@ -23,7 +23,7 @@ We get a link to the image that is saved to the database with the URL and video 
 The cursor changes upon hovering on the play button, and the video is launched on click. The pages are responsive, so the button stays centered on changing the size and shape of the screen. 
 ![](gif/5.gif)
 ![](gif/4.5.gif)
-The messages from the chat here were sont from different accounts from incognito tabs, though the tabs don't show on the recording.
+The messages from the chat here were sent from different accounts from incognito tabs, though the tabs don't show on the recording.
 ![](gif/6.gif)
 
 Users can also view all other users displayed on in a table, they can send friend request, approve them or decline, and delete friends from the list. There is a separate list of users, friends and friend requests. Anonymous users cannot view those lists. When an anonymous user clicks on the chat page, they are directed to the log in page. 
