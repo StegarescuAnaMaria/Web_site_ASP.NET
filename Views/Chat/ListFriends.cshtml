@@ -1,0 +1,84 @@
+﻿
+@{
+    ViewBag.Title = "ListFriends";
+}
+
+<br />
+
+<table class="table table-hover table-bordered" id="friends">
+    <thead>
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Role
+            </th>
+            <th>
+                Delete?
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+
+
+
+</table>
+<br />
+
+<a href="/Chat/ListFriendRequests" role="button" style="float:left; margin-top:5px; margin-bottom:10px;" class="btn btn-primary">List Friend Requests</a>
+<a href="/Chat/ListUsers" role="button" style="float:right; margin-top:5px; margin-bottom:10px;" class="item btn btn-primary">List Users</a>
+@section scripts{
+
+    <script>
+        $(document).ready(function () {
+
+            var table = $("#friends").DataTable({
+                ajax: {
+
+                    url: "/api/friend",
+                    dataSrc: ""
+                },
+                columns: [
+                    {
+                        data: "name",
+                        render: function (data, type, row) {
+                            return row.Name;
+                        }
+                    },
+                    {
+                        data: "role",
+                        render: function (data, type, row) {
+                            return (row.RoleName == null) ? "User" : row.RoleName;
+                        }
+                    },
+                    {
+                        data: "",
+                        render: function (data, type, row) {
+                            return "<button class='btn btn-primary js-delete' id1=" + row.Id1 + " id2=" + row.Id2 + ">Delete</button>";
+                        }
+                    }
+                ]
+            });
+
+            $("#friends").on("click", ".js-delete", function () {
+                var button = $(this);
+                bootbox.confirm("Are you sure you want to delete this friend from your friend list?", function (result) {
+                    if (result) {
+                        $.ajax({
+                            url: "/api/friend?id1=" + button.attr("id1") + "&id2=" + button.attr("id2"),
+                            method: "DELETE",
+                            success: function () {
+                                table.row(button.parents("tr")).remove().draw();
+                            }
+                        });
+                    }
+                });
+                
+            });
+        });
+
+    </script>
+
+}
