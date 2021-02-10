@@ -2,17 +2,17 @@
 A small Starset fan-site created using ASP.NET MVC
 
 
-![](1.gif)
-![](2.gif)
+![](gif/1.gif)
+![](gif/2.gif)
 
-![](3.gif)
+![](gif/3.gif)
 
-![](4.gif)
-![](5.gif)
+![](gif/4.gif)
+![](gif/5.gif)
 
-![](6.gif)
+![](gif/6.gif)
 
-![](7.gif)
-![](8.gif)
+![](gif/7.gif)
+![](gif/8.gif)
 
 
