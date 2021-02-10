@@ -1,1 +1,6 @@
+<<<<<<< HEAD
 *.gif filter=lfs diff=lfs merge=lfs -text
+=======
+*.mp4 filter=lfs diff=lfs merge=lfs -text
+>>>>>>> e5c65f66d288cd8d3292eed46db36a8811a783f1
+1.gif filter=lfs diff=lfs merge=lfs -text
