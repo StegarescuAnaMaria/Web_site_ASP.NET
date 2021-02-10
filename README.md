@@ -18,11 +18,15 @@ The admin can add an image from their computer, and it will automatically be sav
 Note: My screen capture recording doesn't show how I chose the file from my computer for some reason. 
 The difference with the videos is that they are not being saved anywhere. The videos are embedded directly from youtube. 
 ![](gif/4.gif)
-![](gif/4.5.gif)
+When the admin inputs the URL, the video id is extracted from the url and then we use the id to get the thumbnail in maximum resolution by sending the request to YT. 
+We get a link to the image that is saved to the database with the URL and video id. The video gallery displays images, with a "play button" icon centered on them. 
+The cursor changes upon hovering on the play button, and the video is launched on click. The pages are responsive, so the button stays centered on changing the size and shape of the screen. 
 ![](gif/5.gif)
-
+![](gif/4.5.gif)
+The messages from the chat here were sont from different accounts from incognito tabs, though the tabs don't show on the recording.
 ![](gif/6.gif)
 
+Users can also view all other users displayed on in a table, they can send friend request, approve them or decline, and delete friends from the list. There is a separate list of users, friends and friend requests. Anonymous users cannot view those lists. When an anonymous user clicks on the chat page, they are directed to the log in page. 
 ![](gif/7.gif)
 ![](gif/8.gif)
 
