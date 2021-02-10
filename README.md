@@ -18,6 +18,7 @@ The admin can add an image from their computer, and it will automatically be sav
 Note: My screen capture recording doesn't show how I chose the file from my computer for some reason. 
 The difference with the videos is that they are not being saved anywhere. The videos are embedded directly from youtube. 
 ![](gif/4.gif)
+![](gif/4.5.gif)
 ![](gif/5.gif)
 
 ![](gif/6.gif)
